@@ -3,7 +3,7 @@ from ws4py.client.threadedclient import WebSocketClient
 import json
 
 url = 'ws://localhost:8080/wsplay'
-key = "ShaquanasCorrectlyTestedDuck"
+key = "LateshasFastDefectivePillow"
 #url = "ws://npcompete.io/wsplay"
 #url = 'ws://npcompete.io/wsjoin?game=bbb'
 #key = "AngelenasCarefullyEqualArtichoke"
@@ -45,16 +45,19 @@ class WSBot(WebSocketClient):
         #print data[self.playerNumStr]["bits"]
         if data[self.playerNumStr]["bits"] >= 15000:
             print "Bots engaged\n"
-            for i in range(10):
-                self.send("b10 01")
+            for i in range(500):
+                self.send("b00 01")
 
     def received_message(self, m):
         data = json.loads(m.data)
         if(self.frame == 0):
             self.bot_init(data)
             return
+
         self.winOrlose(data)
-        self.operation(data)        
+
+        self.operation(data)
+        
         self.frame += 1
 
 
