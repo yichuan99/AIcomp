@@ -3,7 +3,8 @@ from ws4py.client.threadedclient import WebSocketClient
 import json
 
 url = 'ws://localhost:8080/wsplay'
-key = "LateshasFastDefectivePillow"
+key = "ShaquanasCorrectlyTestedDuck"
+
 #url = "ws://npcompete.io/wsplay"
 #url = 'ws://npcompete.io/wsjoin?game=bbb'
 #key = "AngelenasCarefullyEqualArtichoke"

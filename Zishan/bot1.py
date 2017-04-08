@@ -2,8 +2,9 @@
 from ws4py.client.threadedclient import WebSocketClient
 import json
 
-url = "ws://127.0.0.1:8080/wsplay"
-key = "TrumansQuietlyTastySister"
+url = 'ws://localhost:8080/wsplay'
+#key = "TrumansQuietlyTastySister"  ##Zishan's key
+key = "DarbysLoudlyUnevenConcubine" ##Yichuan's key
 
 
 class WSBot(WebSocketClient):
