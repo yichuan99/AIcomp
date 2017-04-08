@@ -1,6 +1,7 @@
 # pip install ws4py
 from ws4py.client.threadedclient import WebSocketClient
 import json
+import time
 
 url = 'ws://localhost:8080/wsplay'
 key = "ShaquanasCorrectlyTestedDuck"
@@ -21,7 +22,7 @@ class WSBot(WebSocketClient):
 
     def closed(self, code, reason=None):
         print "Closed down", code, reason
-
+ 
     def bot_init(self, data):
         # expect status message
         if self.frame == 0:
@@ -44,9 +45,11 @@ class WSBot(WebSocketClient):
     def operation(self, data):
         #OPERATION  
         #print data[self.playerNumStr]["bits"]
-        if data[self.playerNumStr]["bits"] >= 15100:
+        if data[self.playerNumStr]["bits"] >= 5000:
             print "Bots engaged\n"
-            for i in range(500):
+            for i in range(25):
+                #print "bolt"
+                #sleep(2/1000000.0)
                 self.send("b00 01")
 
     def received_message(self, m):
