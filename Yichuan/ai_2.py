@@ -42,7 +42,7 @@ class WSBot(WebSocketClient):
             ws.close()
 
     def operation(self, data):
-        #OPERATION
+        #OPERATION  
         #print data[self.playerNumStr]["bits"]
         if data[self.playerNumStr]["bits"] >= 15100:
             print "Bots engaged\n"
