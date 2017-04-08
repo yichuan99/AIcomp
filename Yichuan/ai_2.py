@@ -44,7 +44,7 @@ class WSBot(WebSocketClient):
     def operation(self, data):
         #OPERATION
         #print data[self.playerNumStr]["bits"]
-        if data[self.playerNumStr]["bits"] >= 15000:
+        if data[self.playerNumStr]["bits"] >= 15100:
             print "Bots engaged\n"
             for i in range(500):
                 self.send("b00 01")
