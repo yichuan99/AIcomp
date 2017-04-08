@@ -3,8 +3,11 @@ from ws4py.client.threadedclient import WebSocketClient
 import json
 
 url = "ws://127.0.0.1:8080/wsplay"
-key = "TrumansQuietlyTastySister"
-
+# keys for zishan's server
+# user: yichuan
+# key = "TrumansQuietlyTastySister"
+# user: zishan
+key = "LouisasCorrectlyScaredRamen"
 
 class WSBot(WebSocketClient):
     frame = 0
@@ -31,8 +34,8 @@ class WSBot(WebSocketClient):
                 print "User won :)"
             ws.close()
         self.frame += 1
-        if data["p1"]["bits"] >= 10000:
-            self.send("b01 01")
+        if data['p' + str(self.playerNum)]["bits"] >= 10000:
+            self.send("b00 01")
 
 if __name__ == '__main__':
     try:
